@@ -36,5 +36,6 @@ colocar as depedencias da dependecia no requirements
 
 pip install -r requirements.txt
 
+uvicorn main:app --reload
 
 

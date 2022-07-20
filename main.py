@@ -1,11 +1,10 @@
 from fastapi import FastAPI
+from src.application.routers import users
 
-from src.domain.user.user_entity import User, UserDTO
 
 app = FastAPI()
+app.include_router(users.router)
 
-
-@app.post("/")
-async def users(user_props: UserDTO):
-    user = User(user_props)
-    return {"user": user}
+@app.get("/")
+async def home():
+    return {"status": "ok"}
